@@ -2,7 +2,7 @@ let mongoose = require("mongoose");
 let db = require("../models");
 require('dotenv/config');
 
-const dbConfig = process.env.MONGODB_URI ||MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/fitdb';
+const dbConfig = process.env.MONGODB_URI || process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/fitdb';
 
 
 mongoose.connect(dbConfig, {
