@@ -1,14 +1,15 @@
 let mongoose = require("mongoose");
 let db = require("../models");
+require('dotenv/config');
 
-// provided by bcbrian
-mongoose
-  .connect(
-    process.env.MONGODB_URI || "mongodb://localhost/workout",
-    { useNewUrlParser: true }
-  )
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
+const dbConfig = process.env.MONGODB_URI||"mongodb://localhost/fitdb";
+
+
+mongoose.connect(dbConfig, {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true 
+});
 
 let workoutSeed = [
   {
