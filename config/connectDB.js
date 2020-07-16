@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require('dotenv/config');
 
-const dbConfig = process.env.MONGODB_URI ||process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/fitdb';
+const dbConfig = process.env.MONGODB_URI ;
 
 
 async function connectDB(){
